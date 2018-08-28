@@ -1,4 +1,9 @@
 # game bench
+## 已编译文件
+```
+bin/client.xxx
+bin/server.xxx
+```
 ## 配置文件说明
 ### 目录
 > bin/etc目录
