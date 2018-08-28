@@ -1,0 +1,10 @@
+request:
+  -
+   address: "http://www.domain.com/game?cmd=enter"
+   param: "{}"
+  -
+   address: "http://www.domain.com/game?cmd=enter"
+   param: "{}"
+  -
+   address: "http://www.domain.com/game?cmd=enter"
+   param: "{}"
