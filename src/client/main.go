@@ -30,7 +30,7 @@ func main() {
 	total := flag.Int("n", 1000, "请求总量")
 	//request := flag.String("r", "http", "请求类型: http(s)/ws")
 	address := flag.String("a", "", "请求地址: http(http://www.domain.com) | ws(ws://domain.com)")
-	useToken := flag.String("t", "no", "使用token文件[yes|no]")
+	useToken := flag.String("t", "", "使用token文件[yes|no]")
 	serverAddress := flag.String("s", "", "服务器端监控地址(http://www.domain.com:19850)")
 
 	flag.Parse()
@@ -48,16 +48,10 @@ func main() {
 	clientF := float64(*client)
 	groupNum := int(math.Ceil(totalF / clientF))
 
-	var tokenData []string
 	var tokenLen int
-
 	if *useToken == "yes" {
-		tokenData, err := tokenList()
+		tokenData, _ = tokenList()
 		tokenLen = len(tokenData)
-		if err != nil {
-			log.Println(err)
-			return
-		}
 	} else {
 		tokenData = make([]string, 0, 1)
 		tokenLen = 0
